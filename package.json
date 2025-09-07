@@ -1,0 +1,38 @@
+{
+	"name": "reactvite-bp",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "bunx vite",
+		"build": "bunx vite build",
+		"lint": "bunx biome lint .",
+		"format": "bunx biome format . --write",
+		"preview": "bunx vite preview"
+	},
+	"dependencies": {
+		"@biomejs/biome": "^2.1.4",
+		"biome": "^0.3.3",
+		"lucide-react": "^0.542.0",
+		"postprocessing": "^6.37.7",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"react-haiku": "^2.4.1",
+		"three": "^0.180.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.32.0",
+		"@types/bun": "latest",
+		"@types/react": "^19.1.9",
+		"@types/react-dom": "^19.1.7",
+		"@vitejs/plugin-react": "^4.7.0",
+		"eslint-plugin-react-hooks": "^5.2.0",
+		"eslint-plugin-react-refresh": "^0.4.20",
+		"globals": "^16.3.0",
+		"sass": "^1.91.0",
+		"vite": "^7.1.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	}
+}

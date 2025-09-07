@@ -1,0 +1,22 @@
+@use '../../styles/variables' as *;
+
+nav {;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background: var(--muted-dark-color);
+}
+
+h3 {
+  padding: $spacing-md 0;
+  font-size: $font-logo-size;
+  color: var(--primary-color);
+  letter-spacing: 2.4px;
+  cursor: pointer;
+}
+
+.btn.btn-ui {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

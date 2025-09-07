@@ -1,0 +1,11 @@
+// Main SCSS entry point - imports all styles
+@use 'variables';
+@use 'fonts';
+@use 'base';
+@use 'layout';
+
+// Your component styles go here
+@use '../components/NavBar/NavBar';
+@use '../components/PixelBlast/PixelBlast';
+@use '../components/SearchBar/SearchBar';
+@use '../components/HeadingText/HeadingText';

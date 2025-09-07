@@ -1,0 +1,48 @@
+// SCSS color module for modern color functions
+@use 'sass:color';
+
+
+// CSS Custom Properties for theming
+:root {
+  --primary-color: #B6F500;
+  --dark-color: #121212;
+  --light-color: #666666;
+  --extra-light-color: #dadada;
+  --muted-dark-color: #1A1A1A;
+  --extra-muted-dark-color: #212121;
+}
+
+.dark {
+
+}
+
+// Typography
+$font-family-base: 'tiny5', sans-serif;
+$font-family-heading: 'poppins', sang-serif;
+$font-size-base: 1.6rem;
+$font-logo-size: 3.2rem;
+$font-heading-size: 6.4rem;
+$line-height-base: 1.5;
+
+// Spacing
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xlg: 4.2rem;
+
+// Breakpoints
+$breakpoint-phone: 768px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+
+// Transitions
+$transition-base: all 0.3s;
+$transition-slow: all 1s;
+
+// Layout
+$container-max-width: 1024px;
+
+// Breakpoint
+$mobile-breakpoint: 768px;

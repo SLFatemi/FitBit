@@ -1,0 +1,34 @@
+// Base styles and CSS reset
+@use 'variables' as *;
+
+
+:root {
+  color-scheme: light dark;
+  overflow-y: scroll;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  overflow-x: hidden;
+}
+
+// Your custom styles go here
+
+
+.background {
+  filter: brightness(0.4);
+}
+

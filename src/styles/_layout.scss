@@ -1,0 +1,22 @@
+// Layout utilities and components
+// Add your layout styles here
+@use 'variables' as *;
+
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  position: absolute;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: $spacing-xlg;
+}
+
+
