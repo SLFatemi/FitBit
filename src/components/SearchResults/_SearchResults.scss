@@ -1,0 +1,27 @@
+@use '../../styles/variables' as *;
+
+ul {
+  font-family: $font-family-heading;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  grid-row: 1/-1;
+  grid-column: 1;
+  max-height: 95dvh;
+  width: 100%;
+
+  border-radius: $border-radius-sm;
+  padding: calc($spacing-lg - 0.4rem);
+  overflow-y: scroll;
+  background: var(--extra-muted-dark-color);
+}
+
+
+ul li {
+  list-style: none;
+}
+
+ul p {
+  font-size: $font-size-base;
+  align-self: center;
+}

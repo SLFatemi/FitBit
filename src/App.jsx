@@ -1,4 +1,3 @@
-import { Scroll } from "lucide-react";
 import { useState } from "react";
 import HeadingText from "./components/HeadingText/HeadingText.jsx";
 import Main from "./components/Main/Main.jsx";
@@ -6,6 +5,7 @@ import NavBar from "./components/NavBar/NavBar.jsx";
 import PixelBlast from "./components/PixelBlast/PixelBlast.jsx";
 import ScrollDown from "./components/ScrollDown/ScrollDown.jsx";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
+import SearchResults from "./components/SearchResults/SearchResults.jsx";
 import { useFetch } from "./hooks/useFetch.jsx";
 
 const URL_EXCERSICEDB = "https://exercisedb.p.rapidapi.com/exercises/name";
@@ -54,9 +54,21 @@ function App() {
 					</div>
 				</div>
 			</section>
-			<section className={"Main"}>
+			<section className={"SearchResult"}>
 				<div className="container">
-					<Main />
+					<Main>
+						<SearchBar
+							query={query}
+							setQuery={setQuery}
+							handleSubmit={handleSubmit}
+						/>
+						<SearchResults
+							query={query}
+							data={data}
+							loading={loading}
+							error={error}
+						/>
+					</Main>
 				</div>
 			</section>
 		</>

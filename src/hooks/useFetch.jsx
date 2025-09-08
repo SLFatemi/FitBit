@@ -9,6 +9,8 @@ function useFetch(url, options = {}) {
 	useEffect(() => {
 		if (!url) return;
 		async function fetchData() {
+			setLoading(true);
+			setError(null);
 			try {
 				const res = await fetch(url, options);
 				if (!res.ok) throw new Error(`There was an error ${res.status}`);

@@ -5,6 +5,8 @@
   align-items: center;
   background-color: var(--extra-muted-dark-color);
   border-radius: $border-radius-sm;
+  grid-row: 1;
+  grid-column: 2;
 }
 
 input {

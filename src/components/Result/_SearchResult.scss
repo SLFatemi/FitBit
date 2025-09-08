@@ -1,0 +1,53 @@
+@use '../../styles/variables' as *;
+
+li {
+  padding: 1.6rem 2.4rem;
+  background: var(--muted-dark-color);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+  border-radius: $border-radius-sm;
+
+  &:hover {
+
+  }
+}
+
+li img {
+  height: 36px;
+  rotate: -45deg;
+}
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: $spacing-md
+}
+
+.name {
+  font-size: $font-size-base;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  gap: 0.6rem;
+}
+
+.tag {
+  padding: 0.4rem 0.8rem;
+  background: #B6F500;
+  color: var(--dark-color);
+  font-size: $font-size-tag;
+  border-radius: $border-radius-full;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+ul p {
+  justify-self: start;
+}

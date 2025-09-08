@@ -1,12 +1,7 @@
 import "./_Main.scss";
-import SearchBar from "../SearchBar/SearchBar.jsx";
 
-function Main() {
-	return (
-		<main>
-			<SearchBar />
-		</main>
-	);
+function Main({ children }) {
+	return <main>{children}</main>;
 }
 
 export default Main;

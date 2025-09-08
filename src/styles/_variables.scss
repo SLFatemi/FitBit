@@ -20,6 +20,7 @@
 // Typography
 $font-family-base: 'tiny5', sans-serif;
 $font-family-heading: 'poppins', sang-serif;
+$font-size-tag: 0.8rem;
 $font-size-base: 1.6rem;
 $font-logo-size: 3.2rem;
 $font-heading-size: 6.4rem;
@@ -39,6 +40,8 @@ $breakpoint-phone: 768px;
 // Border radius
 $border-radius-sm: 4px;
 $border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-full: 9999px;
 
 // Transitions
 $transition-base: all 0.3s;

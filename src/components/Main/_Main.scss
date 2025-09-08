@@ -1,6 +1,10 @@
+@use '../../styles/variables' as *;
+
 main {
   display: grid;
   width: 100%;
-  grid-template-columns: 2.5fr 1fr;
+  grid-template-columns: 1fr 1.8fr;
   grid-template-rows: 1fr 8fr;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xlg;
 }

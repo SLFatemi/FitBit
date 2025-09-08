@@ -25,16 +25,6 @@ $animDuration: 6s;
 }
 
 
-p {
-  margin-top: 50px;
-  font-family: "Cabin", sans-serif;
-  letter-spacing: 12px;
-  text-indent: 12px;
-  color: $colorOutline;
-  animation: colorText $animDuration ease-out infinite,
-  nudgeText $animDuration ease-out infinite;
-}
-
 .mouse {
   @include bgGradient;
   position: relative;
