@@ -1,16 +1,29 @@
 @use '../../styles/variables' as *;
 
 footer {
-  height: 16rem;
+  grid-column: 1 / -1;
+  margin-top: $spacing-lg;
+  padding: 0 0 6.25rem 0;
+  border-top: solid 1px var(--extra-muted-gray);
   display: flex;
   align-items: center;
-  justify-content: center;
-}
+  justify-content: space-between;
+  min-width: 100%;
 
-footer span {
-  color: var(--light-color);
-  font-family: $font-family-heading;
-  font-size: $font-size-base;
-  text-transform: uppercase;
-  letter-spacing: 6px;
+  p {
+    font-size: 1.4rem;
+    color: var(--light-color);
+    letter-spacing: 1px;
+
+    span {
+      color: var(--primary-color);
+    }
+  }
+
+  // Mobile responsive
+  @media (max-width: $mobile-breakpoint) {
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-sm;
+  }
 }

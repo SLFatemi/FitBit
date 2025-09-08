@@ -10,12 +10,13 @@ nav {;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h3 {
+nav a {
   padding: $spacing-md 0;
   font-size: $font-logo-size;
   color: var(--primary-color);
   letter-spacing: 2.4px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn {
