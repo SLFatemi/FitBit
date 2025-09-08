@@ -9,6 +9,7 @@
   --light-color: #666666;
   --extra-light-color: #dadada;
   --muted-dark-color: #1A1A1A;
+  --muted-dark-color-hover: #282828;
   --muted-dark-color-tp: rgba(26, 26, 26, 0.94);
   --extra-muted-dark-color: #212121;
 }
@@ -20,11 +21,13 @@
 // Typography
 $font-family-base: 'tiny5', sans-serif;
 $font-family-heading: 'poppins', sang-serif;
+
 $font-size-tag: 0.8rem;
 $font-size-base: 1.6rem;
 $font-logo-size: 3.2rem;
 $font-heading-size: 6.4rem;
 $font-secondary-heading-size: 5.4rem;
+
 $line-height-base: 1.5;
 
 // Spacing

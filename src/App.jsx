@@ -6,14 +6,15 @@ import PixelBlast from "./components/PixelBlast/PixelBlast.jsx";
 import ScrollDown from "./components/ScrollDown/ScrollDown.jsx";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import SearchResults from "./components/SearchResults/SearchResults.jsx";
+import Selected from "./components/Selected/Selected.jsx";
 import { useFetch } from "./hooks/useFetch.jsx";
 
 const URL_EXCERSICEDB = "https://exercisedb.p.rapidapi.com/exercises/name";
-// const URL_API_NINJA = "https://api.api-ninjas.com/v1/exercises?muscle";
 
 function App() {
 	const [query, setQuery] = useState("");
 	const [url, setUrl] = useState("");
+	const [selected, setSelected] = useState(null);
 
 	const { data, loading, error } = useFetch(url, {
 		method: "GET",
@@ -67,7 +68,10 @@ function App() {
 							data={data}
 							loading={loading}
 							error={error}
+							selected={selected}
+							setSelected={setSelected}
 						/>
+						<Selected selected={selected} />
 					</Main>
 				</div>
 			</section>

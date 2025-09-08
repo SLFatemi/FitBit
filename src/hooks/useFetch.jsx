@@ -12,6 +12,7 @@ function useFetch(url, options = {}) {
 			setLoading(true);
 			setError(null);
 			try {
+				console.log("CALL");
 				const res = await fetch(url, options);
 				if (!res.ok) throw new Error(`There was an error ${res.status}`);
 
@@ -26,7 +27,6 @@ function useFetch(url, options = {}) {
 		}
 		fetchData();
 	}, [url]);
-	if (url) console.log(data);
 	return { data, loading, error };
 }
 

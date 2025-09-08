@@ -1,7 +1,7 @@
 import "./_SearchResults.scss";
 import SearchResult from "../Result/SearchResult.jsx";
 
-function SearchResults({ query, data, error, loading }) {
+function SearchResults({ query, data, error, loading, setSelected, selected }) {
 	if (!query)
 		return (
 			<ul>
@@ -31,7 +31,7 @@ function SearchResults({ query, data, error, loading }) {
 	return (
 		<ul>
 			{data.map((res) => (
-				<SearchResult result={res} key={res.id} />
+				<SearchResult setSelected={setSelected} result={res} key={res.id} />
 			))}
 		</ul>
 	);

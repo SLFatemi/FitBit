@@ -1,21 +1,24 @@
 @use '../../styles/variables' as *;
 
 li {
-  padding: 1.6rem 2.4rem;
-  background: var(--muted-dark-color);
+  padding: 2rem 2.4rem;
   display: flex;
   align-items: center;
   justify-content: start;
   gap: 2rem;
+  background: var(--muted-dark-color);
   border-radius: $border-radius-sm;
 
-  &:hover {
+  cursor: pointer;
+  transition: all 0.2s;
 
+  &:hover {
+    background: var(--muted-dark-color-hover)
   }
 }
 
 li img {
-  height: 36px;
+  height: 40px;
   rotate: -45deg;
 }
 
@@ -44,6 +47,7 @@ li img {
   color: var(--dark-color);
   font-size: $font-size-tag;
   border-radius: $border-radius-full;
+  font-family: $font-family-heading;
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
