@@ -1,0 +1,16 @@
+@use '../../styles/variables' as *;
+
+footer {
+  height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer span {
+  color: var(--light-color);
+  font-family: $font-family-heading;
+  font-size: $font-size-base;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}

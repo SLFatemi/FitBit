@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "./components/Footer/Footer.jsx";
 import HeadingText from "./components/HeadingText/HeadingText.jsx";
 import Main from "./components/Main/Main.jsx";
 import NavBar from "./components/NavBar/NavBar.jsx";
@@ -75,6 +76,7 @@ function App() {
 					</Main>
 				</div>
 			</section>
+			<Footer />
 		</>
 	);
 }
