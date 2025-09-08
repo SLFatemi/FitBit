@@ -74,6 +74,7 @@ function Selected({ selected }) {
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 				allowFullScreen
 			/>
+
 			<div className="detail">
 				<h2>{selected.name}</h2>
 				<div className="tags">

@@ -18,6 +18,12 @@ h3 {
   cursor: pointer;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn.btn-ui {
   background: none;
   border: none;

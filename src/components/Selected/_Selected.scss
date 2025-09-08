@@ -6,6 +6,7 @@ article {
   padding: $spacing-md;
   display: flex;
   flex-direction: column;
+  min-height: max-content;
   gap: 1.6rem;
 }
 
@@ -43,8 +44,14 @@ h2 {
   font-size: $font-size-base;
   line-height: 1.6;
   text-align: left;
-
+  color: var(--extra-light-color);
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+article p {
+  font-family: $font-family-heading;
+  font-size: $font-size-base;
+  color: var(--light-color);
+  align-self: center;
+}

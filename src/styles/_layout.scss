@@ -20,13 +20,20 @@
   row-gap: $spacing-xlg;
 }
 
-.results {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  display: flex;
-  flex-direction: column;
-  row-gap: $spacing-xlg;
+
+@media (max-width: $mobile-breakpoint) {
+  .container {
+    max-width: calc(100vw - 8.4rem);
+  }
+
+  .heading {
+    top: 15%;
+    left: 1%;
+
+    h1 {
+      font-size: $font-heading-mobile-size;
+    }
+  }
 }
 
 

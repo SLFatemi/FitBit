@@ -54,4 +54,33 @@ li img {
 
 ul p {
   justify-self: start;
+  color: var(--light-color);
+}
+
+
+.selected {
+  background: var(--muted-dark-color-hover)
+}
+
+
+@media (max-width: $mobile-breakpoint) {
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  li img {
+    height: 32px;
+  }
+  .name {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .detail-wrapper {
+    display: flex;
+    align-items: center;
+  }
 }

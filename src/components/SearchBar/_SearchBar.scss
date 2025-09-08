@@ -25,8 +25,8 @@ input:focus {
   outline: none;
 }
 
-.btn-ui {
-  padding-left: 2rem;
+.wrapper .btn-ui {
+  padding-right: 2rem;
 }
 
 .btn-ui .icon {
@@ -38,5 +38,11 @@ input:focus {
   &:hover {
     stroke: var(--extra-light-color);
   }
+}
 
+
+@media (max-width: $mobile-breakpoint) {
+  .wrapper {
+    grid-column: 1;
+  }
 }

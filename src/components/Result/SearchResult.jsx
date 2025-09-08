@@ -1,9 +1,12 @@
 import "./_SearchResult.scss";
 import ExerciseImage from "../../assets/DecoyImg.png";
 
-function SearchResult({ result, setSelected }) {
+function SearchResult({ result, setSelected, selected }) {
 	return (
-		<li onClick={() => setSelected(result)}>
+		<li
+			className={`${result?.id === selected?.id ? "selected" : ""}`}
+			onClick={() => setSelected(result)}
+		>
 			<img alt={"Man doing exercise"} src={ExerciseImage} />
 			<div className={"detail-wrapper"}>
 				<h4 className={"name"}>

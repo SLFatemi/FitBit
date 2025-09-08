@@ -25,3 +25,26 @@ ul p {
   font-size: $font-size-base;
   align-self: center;
 }
+
+
+@media (max-width: $mobile-breakpoint) {
+  ul {
+    grid-row: 2;
+    max-height: 200px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: $spacing-lg;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  ul > * {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+  }
+
+  ul::-webkit-scrollbar {
+    display: none;
+  }
+}

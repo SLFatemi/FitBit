@@ -8,3 +8,11 @@ main {
   gap: $spacing-lg;
   margin-bottom: $spacing-xlg;
 }
+
+
+@media (max-width: $mobile-breakpoint) {
+  main {
+    grid-template-rows: auto 2fr auto;
+    grid-template-columns: 1fr;
+  }
+}

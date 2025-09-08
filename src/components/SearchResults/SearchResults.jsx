@@ -31,7 +31,12 @@ function SearchResults({ query, data, error, loading, setSelected, selected }) {
 	return (
 		<ul>
 			{data.map((res) => (
-				<SearchResult setSelected={setSelected} result={res} key={res.id} />
+				<SearchResult
+					selected={selected}
+					setSelected={setSelected}
+					result={res}
+					key={res.id}
+				/>
 			))}
 		</ul>
 	);
