@@ -5,10 +5,19 @@ h1 {
   font-family: $font-family-heading;
   font-size: $font-heading-size;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.2;
+  text-align: center;
+  width: 80%;
 }
 
 strong {
   font-weight: 900;
   font-style: italic;
+}
+
+.special {
+  color: var(--primary-color);
+  font-family: $font-family-base;
+  font-size: $font-secondary-heading-size;
+  text-transform: uppercase;
 }

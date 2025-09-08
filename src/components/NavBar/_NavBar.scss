@@ -1,10 +1,13 @@
 @use '../../styles/variables' as *;
 
 nav {;
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
-  background: var(--muted-dark-color);
+  z-index: 2;
+  background: var(--muted-dark-color-tp);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h3 {

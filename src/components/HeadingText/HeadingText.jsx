@@ -3,15 +3,11 @@ import "./_HeadingText.scss";
 function HeadingText() {
 	return (
 		<h1>
-			Your
+			<span className="special">Your</span>
 			<br />
-			<strong>Simple.</strong>
+			<strong>Simple. Light-Weight. Go-To.</strong>
 			<br />
-			<strong>Light-Weight.</strong>
-			<br />
-			<strong>Go-To.</strong>
-			<br />
-			Exercise Finder
+			<span className={"special"}>Exercise Finder</span>
 		</h1>
 	);
 }

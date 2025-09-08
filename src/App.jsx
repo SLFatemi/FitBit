@@ -1,7 +1,10 @@
+import { Scroll } from "lucide-react";
 import { useState } from "react";
 import HeadingText from "./components/HeadingText/HeadingText.jsx";
+import Main from "./components/Main/Main.jsx";
 import NavBar from "./components/NavBar/NavBar.jsx";
 import PixelBlast from "./components/PixelBlast/PixelBlast.jsx";
+import ScrollDown from "./components/ScrollDown/ScrollDown.jsx";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import { useFetch } from "./hooks/useFetch.jsx";
 
@@ -29,34 +32,34 @@ function App() {
 	}
 
 	return (
-		<section className={"Hero"}>
-			<div
-				className={"background"}
-				style={{ width: "100%", height: "100dvh", position: "relative" }}
-			>
-				<PixelBlast
-					pixelSize={4}
-					color="#B6F500"
-					patternScale={3}
-					patternDensity={0.8}
-					pixelSizeJitter={0.2}
-					enableRipples={false}
-					speed={0.3}
-					edgeFade={0.3}
-				/>
-			</div>
-			<NavBar />
-			<div className={"container"}>
-				<div className="heading">
-					<HeadingText />
-					<SearchBar
-						handleSubmit={handleSubmit}
-						query={query}
-						setQuery={setQuery}
+		<>
+			<section className={"Hero"}>
+				<div className={"background"}>
+					<PixelBlast
+						pixelSize={4}
+						color="#B6F500"
+						patternScale={3}
+						patternDensity={0.8}
+						pixelSizeJitter={0.2}
+						enableRipples={false}
+						speed={0.3}
+						edgeFade={0.3}
 					/>
 				</div>
-			</div>
-		</section>
+				<NavBar />
+				<div className={"container"}>
+					<div className="heading">
+						<HeadingText />
+						<ScrollDown />
+					</div>
+				</div>
+			</section>
+			<section className={"Main"}>
+				<div className="container">
+					<Main />
+				</div>
+			</section>
+		</>
 	);
 }
 

@@ -9,6 +9,7 @@
   --light-color: #666666;
   --extra-light-color: #dadada;
   --muted-dark-color: #1A1A1A;
+  --muted-dark-color-tp: rgba(26, 26, 26, 0.94);
   --extra-muted-dark-color: #212121;
 }
 
@@ -22,6 +23,7 @@ $font-family-heading: 'poppins', sang-serif;
 $font-size-base: 1.6rem;
 $font-logo-size: 3.2rem;
 $font-heading-size: 6.4rem;
+$font-secondary-heading-size: 5.4rem;
 $line-height-base: 1.5;
 
 // Spacing
@@ -29,6 +31,7 @@ $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
 $spacing-lg: 2rem;
 $spacing-xlg: 4.2rem;
+$spacing-xxlg: 6.2rem;
 
 // Breakpoints
 $breakpoint-phone: 768px;
