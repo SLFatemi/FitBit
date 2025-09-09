@@ -2,6 +2,10 @@
 
 A lightweight, fast, and simple web app to search for exercises, view details, and bookmark your favorites. Built for speed and usability, FitBit Exercise Finder helps you quickly discover new exercises and learn how to perform them.
 
+[![wakatime](https://wakatime.com/badge/user/a4e19d78-170a-4720-a3ce-9630fb31adf7/project/0347f244-1604-41a2-b815-46fae82120be.svg/?style=for-the-badge)](https://wakatime.com/badge/user/a4e19d78-170a-4720-a3ce-9630fb31adf7/project/0347f244-1604-41a2-b815-46fae82120be)
+
+Live: [https://fit-bit.pages.dev/](https://fit-bit.pages.dev/)
+
 ## Features
 - **Search Exercises:** Find exercises by name with instant results.
 - **Exercise Details:** View equipment, difficulty, category, and a short description for each exercise.
