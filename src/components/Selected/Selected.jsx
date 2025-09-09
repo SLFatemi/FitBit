@@ -1,12 +1,13 @@
 import "./_Selected.scss";
 
 import { Bookmark } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useFetch } from "../../hooks/useFetch.jsx";
 
 function Selected({ selected, setBookmarks, bookmarks }) {
     const [data, setData] = useState(null);
     const [usedCache, setUsedCache] = useState(false);
+    const currentRequestRef = useRef(null);
 
     const isBookMarked = bookmarks.some((ex) => ex.id === selected?.id);
 
@@ -14,15 +15,24 @@ function Selected({ selected, setBookmarks, bookmarks }) {
         setData(null);
         setUsedCache(false);
 
+        if (currentRequestRef.current) {
+            currentRequestRef.current.cancelled = true;
+        }
+
         if (!selected) return;
+
+        const requestId = selected.id;
+        currentRequestRef.current = { id: requestId, cancelled: false };
 
         const cacheKey = `yt-${selected.id}`;
         const stored = localStorage.getItem(cacheKey);
         if (stored) {
             try {
                 const parsedData = JSON.parse(stored);
-                setData(parsedData);
-                setUsedCache(true);
+                if (currentRequestRef.current && currentRequestRef.current.id === requestId && !currentRequestRef.current.cancelled) {
+                    setData(parsedData);
+                    setUsedCache(true);
+                }
             } catch (error) {
                 console.error('Error parsing cached data:', error);
                 localStorage.removeItem(cacheKey);
@@ -45,9 +55,13 @@ function Selected({ selected, setBookmarks, bookmarks }) {
 
     useEffect(() => {
         if (apiData && !usedCache && selected) {
-            const cacheKey = `yt-${selected.id}`;
-            localStorage.setItem(cacheKey, JSON.stringify(apiData));
-            setData(apiData);
+            if (currentRequestRef.current &&
+                currentRequestRef.current.id === selected.id &&
+                !currentRequestRef.current.cancelled) {
+                const cacheKey = `yt-${selected.id}`;
+                localStorage.setItem(cacheKey, JSON.stringify(apiData));
+                setData(apiData);
+            }
         }
     }, [apiData, usedCache, selected?.id]);
 
