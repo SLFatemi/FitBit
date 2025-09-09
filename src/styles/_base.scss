@@ -17,6 +17,7 @@
 
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -40,4 +41,6 @@ body {
   -webkit-line-clamp: 5;
   overflow: hidden;
 }
+
+
 

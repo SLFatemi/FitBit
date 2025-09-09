@@ -112,7 +112,7 @@ $animDuration: 6s;
   }
   6% {
     opacity: 1;
-    transform: scale(0.9) translateY($posTrackball/4);
+    transform: scale(0.9) translateY($posTrackball*0.25);
   }
   14% {
     opacity: 0;
@@ -132,7 +132,7 @@ $animDuration: 6s;
   }
   36% {
     opacity: 1;
-    transform: scale(0.9) translateY($posTrackball/4);
+    transform: scale(0.9) translateY($posTrackball*0.25);
   }
   44% {
     opacity: 0;
@@ -152,7 +152,7 @@ $animDuration: 6s;
   }
   66% {
     opacity: 1;
-    transform: scale(0.9) translateY($posTrackball/4);
+    transform: scale(0.9) translateY($posTrackball*0.25);
   }
   74% {
     opacity: 0;

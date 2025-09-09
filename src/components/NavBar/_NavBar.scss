@@ -19,14 +19,51 @@ nav a {
   text-decoration: none;
 }
 
+.bookmark-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  align-self: stretch;
+  cursor: pointer;
+
+  &:hover {
+    p, .icon {
+      color: var(--extra-light-color);
+      stroke: var(--extra-light-color);
+    }
+  }
+}
+
+.bookmark-btn p {
+  font-family: $font-family-base;
+  text-transform: uppercase;
+  color: var(--light-color);
+  font-size: $font-nav-size;
+  transition: color 0.3s;
+}
+
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.btn-ui .icon {
+  stroke: var(--light-color);
+  stroke-width: 3px;
+  fill: none;
+  transition: stroke 0.3s;
+}
+
 .btn.btn-ui {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .bookmark-btn p {
+    display: none;
+  }
 }

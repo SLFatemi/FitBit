@@ -10,7 +10,7 @@ function SearchBar({ query, setQuery, handleSubmit }) {
 				value={query}
 				onChange={(e) => setQuery(e.target.value)}
 			></input>
-			<button className={"btn btn-ui"} type={"submit"}>
+			<button className={"btn btn-ui search-btn"} type={"submit"}>
 				<Search className={"icon"} />
 			</button>
 		</form>

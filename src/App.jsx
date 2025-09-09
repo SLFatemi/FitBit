@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Bookmarks from "./components/Bookmarks/Bookmarks.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import HeadingText from "./components/HeadingText/HeadingText.jsx";
 import Main from "./components/Main/Main.jsx";
@@ -16,6 +17,12 @@ function App() {
 	const [query, setQuery] = useState("");
 	const [url, setUrl] = useState("");
 	const [selected, setSelected] = useState(null);
+	const [bookmarks, setBookmarks] = useState(() => {
+		const saved = localStorage.getItem("bookmarks");
+		return saved ? JSON.parse(saved) : [];
+	});
+
+	const [isBookmarksOpen, setIsBookmarksOpen] = useState(false);
 
 	const { data, loading, error } = useFetch(url, {
 		method: "GET",
@@ -33,22 +40,36 @@ function App() {
 		);
 	}
 
+	useEffect(() => {
+		localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+	}, [bookmarks]);
+
 	return (
 		<>
+			<div className="bookmarks-wrapper">
+				{isBookmarksOpen && (
+					<Bookmarks
+						setSelected={setSelected}
+						selected={selected}
+						setIsBookmarksOpen={setIsBookmarksOpen}
+						bookmarks={bookmarks}
+					/>
+				)}
+			</div>
 			<section className={"Hero"}>
 				<div className={"background"}>
 					<PixelBlast
 						pixelSize={4}
 						color="#B6F500"
 						patternScale={3}
-						patternDensity={0.8}
+						patternDensity={0.4}
 						pixelSizeJitter={0.2}
 						enableRipples={false}
-						speed={0.3}
+						speed={0.6}
 						edgeFade={0.3}
 					/>
 				</div>
-				<NavBar />
+				<NavBar setIsBookmarkOpen={setIsBookmarksOpen} />
 				<div className={"container"}>
 					<div className="heading">
 						<HeadingText />
@@ -56,7 +77,7 @@ function App() {
 					</div>
 				</div>
 			</section>
-			<section className={"SearchResult"}>
+			<section className={"SearchResult"} id={"Main"}>
 				<div className="container">
 					<Main>
 						<SearchBar
@@ -72,7 +93,11 @@ function App() {
 							selected={selected}
 							setSelected={setSelected}
 						/>
-						<Selected selected={selected} />
+						<Selected
+							setBookmarks={setBookmarks}
+							bookmarks={bookmarks}
+							selected={selected}
+						/>
 					</Main>
 				</div>
 			</section>

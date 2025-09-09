@@ -21,6 +21,12 @@ input {
   font-size: 2rem;
 }
 
+.search-btn .icon {
+  &:hover {
+    stroke: var(--extra-light-color);
+  }
+}
+
 input:focus {
   outline: none;
 }
@@ -28,18 +34,6 @@ input:focus {
 .wrapper .btn-ui {
   padding-right: 2rem;
 }
-
-.btn-ui .icon {
-  stroke: var(--light-color);
-  stroke-width: 3px;
-  fill: none;
-  transition: stroke 0.3s;
-
-  &:hover {
-    stroke: var(--extra-light-color);
-  }
-}
-
 
 @media (max-width: $mobile-breakpoint) {
   .wrapper {

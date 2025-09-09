@@ -1,0 +1,36 @@
+@use '../../styles/variables' as *;
+
+.bookmarks-wrapper {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bookmarks {
+  position: fixed;
+  z-index: 2;
+  top: 6.6rem;
+  right: max(calc((100vw - 1024px) / 2), 0px);
+}
+
+
+.bookmarks p {
+  align-self: center;
+}
+
+.bookmarks ul {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  max-height: 45vh;
+  width: 100%;
+
+  border-radius: $border-radius-sm;
+  overflow-y: scroll;
+  background: var(--extra-muted-dark-color);
+}
+
+
+@media (max-width: $mobile-breakpoint) {
+
+}

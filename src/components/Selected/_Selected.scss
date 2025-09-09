@@ -40,7 +40,7 @@ h2 {
 
 .description {
   font-family: $font-family-heading;
-  padding: $spacing-lg;
+  padding: $spacing-lg $spacing-lg 0;
   font-size: $font-size-base;
   line-height: 1.6;
   text-align: left;
@@ -54,4 +54,17 @@ article p {
   font-size: $font-size-base;
   color: var(--light-color);
   align-self: center;
+}
+
+.filled {
+  fill: var(--extra-light-color);
+}
+
+.detail .bookmark-btn {
+  align-self: center;
+  padding: 0 $spacing-lg;
+}
+
+.detail .bookmark-btn .icon {
+  stroke: var(--extra-light-color);
 }

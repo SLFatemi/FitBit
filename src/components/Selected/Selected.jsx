@@ -1,12 +1,14 @@
 import "./_Selected.scss";
 
+import { Bookmark } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch.jsx";
 
-function Selected({ selected }) {
+function Selected({ selected, setBookmarks, bookmarks }) {
 	const [data, setData] = useState(null);
 	const [usedCache, setUsedCache] = useState(false);
 
+	const isBookMarked = bookmarks.some((ex) => ex.id === selected?.id);
 	const cacheKey = `yt-${selected?.id}`;
 
 	useEffect(() => {
@@ -76,6 +78,19 @@ function Selected({ selected }) {
 			/>
 
 			<div className="detail">
+				<span className={"bookmark-btn"}>
+					<Bookmark
+						className={`icon ${isBookMarked ? "filled" : ""}`}
+						size={24}
+						onClick={() =>
+							setBookmarks((cur) =>
+								isBookMarked
+									? cur.filter((ex) => ex.id !== selected.id)
+									: [...cur, selected],
+							)
+						}
+					/>
+				</span>
 				<h2>{selected.name}</h2>
 				<div className="tags">
 					<span className="category">{selected.category}</span>
