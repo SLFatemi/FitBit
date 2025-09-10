@@ -10,11 +10,14 @@ import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import SearchResults from "./components/SearchResults/SearchResults.jsx";
 import Selected from "./components/Selected/Selected.jsx";
 import { useFetch } from "./hooks/useFetch.jsx";
+import {useDebounce} from "react-haiku";
 
 const URL_EXCERSICEDB = "https://exercisedb.p.rapidapi.com/exercises/name";
 
 function App() {
 	const [query, setQuery] = useState("");
+    const debouncedQuery = useDebounce(query,1000)
+
 	const [url, setUrl] = useState("");
 	const [selected, setSelected] = useState(null);
 	const [bookmarks, setBookmarks] = useState(() => {
@@ -32,13 +35,24 @@ function App() {
 		},
 	});
 
-	function handleSubmit(e) {
+	function handleSearch(e) {
 		e.preventDefault();
-		if (!query.trim()) return;
+		if (!debouncedQuery.trim()) return;
 		setUrl(
-			`${URL_EXCERSICEDB}/${query.toLowerCase()}?offset=0&limit=10&sortMethod=id&sortOrder=ascending`,
+			`${URL_EXCERSICEDB}/${debouncedQuery.toLowerCase()}?offset=0&limit=10&sortMethod=id&sortOrder=ascending`,
 		);
 	}
+
+    useEffect(() => {
+        if (!debouncedQuery.trim()) return;
+        setUrl(
+            `${URL_EXCERSICEDB}/${debouncedQuery.toLowerCase()}?offset=0&limit=10&sortMethod=id&sortOrder=ascending`,
+        );
+
+        return () => {
+            setUrl("")
+        }
+    }, [debouncedQuery]);
 
 	useEffect(() => {
 		localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
@@ -83,7 +97,7 @@ function App() {
 						<SearchBar
 							query={query}
 							setQuery={setQuery}
-							handleSubmit={handleSubmit}
+							handleSubmit={handleSearch}
 						/>
 						<SearchResults
 							query={query}

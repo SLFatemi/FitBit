@@ -2,7 +2,7 @@ import "./_SearchResults.scss";
 import SearchResult from "../Result/SearchResult.jsx";
 
 function SearchResults({ query, data, error, loading, setSelected, selected }) {
-	if (!query)
+	if (!query && !data)
 		return (
 			<ul>
 				<p>Start by searching</p>
